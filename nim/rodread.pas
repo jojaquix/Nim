@@ -251,7 +251,7 @@ begin
     decodeLineInfo(r, result.info);
     if r.s[r.pos] = '$' then begin
       inc(r.pos);
-      result.flags := {@cast}TNodeFlags(int32(decodeInt(r)));
+      //result.flags := {@cast}TNodeFlags(int32(decodeInt(r)));
     end;
     if r.s[r.pos] = '^' then begin
       inc(r.pos);
@@ -325,7 +325,7 @@ begin
       loc.s := low(loc.s);
     if r.s[r.pos] = '$' then begin
       inc(r.pos);
-      loc.flags := {@cast}TLocFlags(int32(decodeInt(r)));
+      //loc.flags := {@cast}TLocFlags(int32(decodeInt(r)));
     end
     else
       loc.flags := {@set}[];
@@ -382,7 +382,7 @@ begin
     result.n := decodeNode(r, UnknownLineInfo());
   if r.s[r.pos] = '$' then begin
     inc(r.pos);
-    result.flags := {@cast}TTypeFlags(int32(decodeInt(r)));
+    //result.flags := {@cast}TTypeFlags(int32(decodeInt(r)));
   end;
   if r.s[r.pos] = '?' then begin
     inc(r.pos);

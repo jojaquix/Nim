@@ -174,7 +174,7 @@ begin
     // file.
   f := n.flags * PersistentNodeFlags;
   if f <> {@set}[] then
-    appf(result, '$$$1', [encodeInt({@cast}int32(f))]);
+    //appf(result, '$$$1', [encodeInt({@cast}int32(f))]);
   if n.typ <> nil then begin
     appf(result, '^$1', [encodeInt(n.typ.id)]);
     pushType(w, n.typ);
@@ -214,7 +214,7 @@ begin
   if loc.s <> low(loc.s) then
     appf(result, '*$1', [encodeInt(ord(loc.s))]);
   if loc.flags <> {@set}[] then
-    appf(result, '$$$1', [encodeInt({@cast}int32(loc.flags))]);
+    //appf(result, '$$$1', [encodeInt({@cast}int32(loc.flags))]);
   if loc.t <> nil then begin
     appf(result, '^$1', [encodeInt(loc.t.id)]);
     pushType(w, loc.t);
@@ -242,7 +242,7 @@ begin
   if t.n <> nil then
     app(result, encodeNode(w, UnknownLineInfo(), t.n));
   if t.flags <> {@set}[] then
-    appf(result, '$$$1', [encodeInt({@cast}int32(t.flags))]);
+    //appf(result, '$$$1', [encodeInt({@cast}int32(t.flags))]);
   if t.callConv <> low(t.callConv) then
     appf(result, '?$1', [encodeInt(ord(t.callConv))]);
   if t.owner <> nil then begin

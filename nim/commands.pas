@@ -295,11 +295,11 @@ begin
     else
       InvalidCmdLineOption(pass, arg, info)
   end;
-  case whichKeyword(ncopy(arg, i)) of
+  {case whichKeyword(ncopy(arg, i)) of
     wOn: include(gNotes, n);
     wOff: exclude(gNotes, n);
     else liMessage(info, errOnOrOffExpectedButXFound, arg)
-  end
+  end}
 end;
 
 function processPath(const path: string): string;

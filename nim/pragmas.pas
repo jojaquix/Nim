@@ -290,11 +290,11 @@ begin
         invalidPragma(n); exit
       end
     end;
-    case whichKeyword(n.sons[1].ident) of
+    {case whichKeyword(n.sons[1].ident) of
       wOn: include(gNotes, nk);
       wOff: exclude(gNotes, nk);
       else liMessage(n.info, errOnOrOffExpected)
-    end
+    end}
   end
   else
     invalidPragma(n);
